@@ -87,7 +87,7 @@ public class VisualizerRemoteCacheManager extends RemoteCacheManager {
 
    public static Properties getCacheProperties() {
       Properties props = new Properties();
-      props.setProperty("infinispan.client.hotrod.server_list", System.getProperty("infinispan.visualizer.serverList"));
+      props.setProperty("infinispan.client.hotrod.server_list", System.getProperty("infinispan_visualizer_serverList"));
       props.setProperty("infinispan.client.hotrod.transport_factory", TRANSPORT_FACTORY);
       return props;
    }
