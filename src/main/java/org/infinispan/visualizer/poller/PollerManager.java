@@ -31,8 +31,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author <a href="mailto:rtsang@redhat.com">Ray Tsang</a>
@@ -127,7 +125,6 @@ public abstract class PollerManager<T> {
    }
 
    protected class UpdateThread extends Thread {
-      private Logger logger;
       private static final long DEFAULT_REFRESH_RATE = 1000L;
 
       private volatile boolean running;
@@ -153,7 +150,7 @@ public abstract class PollerManager<T> {
             try {
                updateClusterList();
             } catch (Exception e) {
-               logger.log(Level.SEVERE, "error when updating cluster list", e);
+               System.out.println("Level.SEVERE: error when updating cluster list", e);
             }
             try {
                Thread.sleep(refreshRate);

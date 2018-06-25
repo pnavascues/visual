@@ -23,8 +23,6 @@
 
 package org.infinispan.visualizer.cdi;
 
-import java.util.logging.Logger;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Disposes;
@@ -59,11 +57,6 @@ public class Resources {
    //e.g. 11222 - 1232 = 9990
    private int jmxHotrodPortOffset = Integer.parseInt(System.getProperty("infinispan.visualizer.jmxPortOffset", "1232"));
    private String nodeColorAsString = System.getProperty("infinispan.visualizer.nodeColor");
-
-   @Produces
-   public Logger produceLog(InjectionPoint injectionPoint) {
-      return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
-   }
 
    @Produces
    @Default
