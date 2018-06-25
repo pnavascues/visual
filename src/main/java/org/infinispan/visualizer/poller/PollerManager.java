@@ -131,7 +131,6 @@ public abstract class PollerManager<T> {
       private long refreshRate = DEFAULT_REFRESH_RATE;
 
       public UpdateThread() {
-         Logger.getLogger(this.getClass().getName());
          setDaemon(true);
       }
 
@@ -150,7 +149,7 @@ public abstract class PollerManager<T> {
             try {
                updateClusterList();
             } catch (Exception e) {
-               System.out.println("Level.SEVERE: error when updating cluster list", e);
+               System.out.println("Level.SEVERE: error when updating cluster list");
             }
             try {
                Thread.sleep(refreshRate);

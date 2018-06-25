@@ -60,13 +60,13 @@ public class PingThread extends Thread {
          try {
             cacheManager.getCache().stats();
          } catch (IllegalStateException e) {
-            System.out.println("Level.SEVERE: illegal state exception, aborting", e);
+            System.out.println("Level.SEVERE: illegal state exception, aborting");
             abort();
          } catch (RemoteCacheManagerNotStartedException e) {
-            System.out.println("Level.SEVERE: not started exception, aborting", e);
+            System.out.println("Level.SEVERE: not started exception, aborting");
             abort();
          } catch (Exception e) {
-            System.out.println("Level.SEVERE: error when retrieving stats", e);
+            System.out.println("Level.SEVERE: error when retrieving stats");
          }
          try {
             Thread.sleep(refreshRate);
